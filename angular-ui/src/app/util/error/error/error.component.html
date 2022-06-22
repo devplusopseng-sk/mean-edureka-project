@@ -1,0 +1,16 @@
+<div class="content-wrapper"
+    [ngClass]="router.url.includes('/login') ? 'alert-login' : router.url.includes('/auth') || router.url.includes('/view-valuation-details') || router.url.includes('/gold-valuation-details') ? 'alert-auth' : 'alert-other'">
+    <alert *ngFor="let alert of alerts;let i = index" [type]="alert.type" [dismissible]="true" (close)="closeAlert(i)"
+        dismissOnTimeout="7000">
+
+        <div [ngSwitch]="alert.type">
+            <div *ngSwitchCase="'danger'"><i class="icon fa fa-ban"></i> {{ alert?.msg }} </div>
+            <div *ngSwitchCase="'warning'"><i class="icon fas fa-exclamation-circle"></i> {{ alert?.msg }} </div>
+            <div *ngSwitchCase="'info'"><i class="icon fas fa-info-circle"></i> {{ alert?.msg }} </div>
+            <div *ngSwitchCase="'success'"><i class="icon fa fa-check"></i> {{ alert?.msg }} </div>
+            <div *ngSwitchDefault></div>
+        </div>
+
+    </alert>
+</div>
+<!-- <span>Alert shown</span> -->

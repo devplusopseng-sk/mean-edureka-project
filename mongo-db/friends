@@ -1,0 +1,7 @@
+{"_id":{"$oid":"62b09139d56474d19a55059d"},"frndDtls":{"friendId":"62aae384df6413c5e1fbcecf","userId":"62aafd44df6413c5e1fbced0","status":"You are friend","createdDate":{"$date":"2022-06-20T15:24:41.979Z"}}}
+{"_id":{"$oid":"62b1b52b08b54c05a083bbda"},"frndDtls":{"friendId":"62b09066ccbb583676bc2857","userId":"62aafd44df6413c5e1fbced0","status":"You are friend","createdDate":{"$date":"2022-06-21T12:10:19.575Z"}}}
+{"_id":{"$oid":"62b1b59708b54c05a083bbdc"},"frndDtls":{"friendId":"62b1b57608b54c05a083bbdb","userId":"62aafd44df6413c5e1fbced0","status":"Request Pending","createdDate":{"$date":"2022-06-21T12:12:07.609Z"}}}
+{"_id":{"$oid":"62b1bcf33657e70223619d2f"},"frndDtls":{"friendId":"62b09066ccbb583676bc2857","userId":"62aae384df6413c5e1fbcecf","status":"Request Pending","createdDate":{"$date":"2022-06-21T12:43:31.134Z"}}}
+{"_id":{"$oid":"62b1da2d3672955b078218a6"},"frndDtls":{"friendId":"62b09352d56474d19a55059e","userId":"62aafd44df6413c5e1fbced0","status":"Request Pending","createdDate":{"$date":"2022-06-21T14:48:13.810Z"}}}
+{"_id":{"$oid":"62b1da9f3672955b078218a7"},"frndDtls":{"friendId":"62b09352d56474d19a55059e","userId":"62aafd44df6413c5e1fbced0","status":"Request Pending","createdDate":{"$date":"2022-06-21T14:50:07.172Z"}}}
+{"_id":{"$oid":"62b1de413672955b078218a8"},"frndDtls":{"friendId":"62b1d0e83672955b078218a3","userId":"62aafd44df6413c5e1fbced0","status":"You are friend","createdDate":{"$date":"2022-06-21T15:05:37.092Z"}}}

@@ -1,0 +1,8 @@
+mat-error.error-md {
+    font-size: 75%;
+}
+
+mat-error.hint-md {
+    font-size: 75%;
+    color: rgba(0,0,0,.6);
+}

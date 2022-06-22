@@ -1,0 +1,55 @@
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <!-- <h1 class="m-0 text-dark">
+              <i class="fas fa-arrow-left cursor-pointer" backButton></i> Register
+            </h1> -->
+                </div>
+                <!-- /.col -->
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /.container-fluid -->
+    </div>
+    <!-- /.content-header -->
+
+    <!-- Main content -->
+    <div class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-1"></div>
+                <div class="col-lg-3">
+
+                    <app-profile-section></app-profile-section>
+
+                </div>
+                <!-- /.col-lg-4 -->
+                <div class="col-lg-7">
+                    <div class="card card-widget widget-user-2 shadow-sm" *ngFor="let new of friends?.usrObj; let i = index;">
+
+                        <div class="widget-user-header">
+                            <div class="widget-user-image">
+                                <img class="img-circle elevation-2" [src]="sharedService.ppMasters[new.userDtls.photoId]"
+                                    alt="User Avatar">
+                            </div>
+
+                            <h3 class="widget-user-username">{{new.userDtls.firstName}} {{new.userDtls.lastName}}</h3>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.col-lg-4 -->
+                <div class="col-lg-1">
+                </div>
+                <!-- /.col-lg-4 -->
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /.container-fluid -->
+    </div>
+    <!-- /.content -->
+</div>
+<!-- /.content-wrapper -->

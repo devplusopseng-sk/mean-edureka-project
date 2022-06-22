@@ -1,0 +1,178 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body {
+    height: 100%;
+  }
+  
+  body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+  }
+  
+  /* Common classes for application START*/
+  
+  .cursor-pointer {
+    cursor: pointer;
+  }
+  
+  button:focus {
+    outline: none;
+  }
+  
+  .mat-body, .mat-body-1, .mat-typography {
+    font: 400 14px/24px Roboto, "Helvetica Neue", sans-serif !important;
+  }
+  
+  .appearance-none .mat-form-field-underline {
+    display: none;
+  }
+  
+  .cdk-overlay-container {
+    z-index: 1039;
+  }
+  
+  .mat-dialog-container {
+    padding: 0 !important;
+  }
+  
+  /* Common classes for application END*/
+  
+  /* Common css for alert START*/
+  
+  .alert {
+    margin-bottom: 0rem !important;
+    border-radius: 0rem !important;
+  }
+  
+  .alert-other {
+    min-height: 0px !important;
+  }
+  
+  .alert-login {
+    min-height: 0px !important;
+    position: fixed !important;
+    width: 100%;
+    z-index: 1035 !important;
+    margin-left: 0rem !important;
+  }
+  
+  .alert-auth {
+    min-height: 0px !important;
+    position: fixed !important;
+    width: 100%;
+    z-index: 1035 !important;
+    margin-left: 0rem !important;
+    margin-top: 0rem;
+  }
+  
+  /* Common css for alert END*/
+  
+  /* Common css for Mat Tables for min-width: 961px START*/
+  
+  @media screen and (min-width: 961px) {
+    mat-cell:last-of-type, mat-header-cell:last-of-type {
+      padding-right: 0px !important;
+    }
+  }
+  
+  /* Common css for Mat Tables for min-width: 961px END*/
+  
+  /* Common css for Mat Tables for max-width: 960px START*/
+  
+  @media screen and (max-width: 960px) {
+    .mat-table .mat-row {
+      border-bottom: 2px solid #ddd;
+      display: block;
+    }
+  
+    .mat-table .mat-cell {
+      border-bottom: 1px solid #ddd;
+      display: block;
+      font-size: 1em;
+      text-align: right;
+      font-weight: bold;
+      height: 45px;
+      padding: 4%;
+    }
+  
+    .mat-table .mat-cell:before {
+      content: attr(data-label);
+      float: left;
+      /* text-transform: uppercase; */
+      font-weight: normal;
+      font-size: .85em;
+    }
+  
+    .mat-header-row {
+      display: none;
+    }
+  
+    .mat-footer-row::after, .mat-header-row::after, .mat-row::after {
+      display: none;
+    }
+  
+    /* .mat-table .mat-row:nth-child(even) {
+      background: #CCC
+    }
+    .mat-table .mat-row:nth-child(odd) {
+      background: #FFF
+    } */
+  }
+  
+  /* Common css for Mat Tables for max-width: 960px END*/
+  
+  /* common colors for cards START*/
+  .bg-success {
+    background-color: #588367 !important;
+  }
+  
+  .bg-success, .bg-success>a {
+    color: #C0DBB9 !important;
+  }
+  
+  .bg-warning {
+    background-color: #F4E4A8 !important;
+  }
+  
+  .bg-warning, .bg-warning>a {
+    color: #31AF9A !important;
+  }
+  
+  .bg-danger {
+    background-color: #9C106F !important;
+  }
+  
+  .bg-danger, .bg-danger>a {
+    color: #C9D9BB !important;
+  }
+  
+  .bg-primary {
+    background-color: #1739B3 !important;
+  }
+  
+  .bg-primary, .bg-primary>a {
+    color: #ABDBE4 !important;
+  }
+  
+  .bg-dark {
+    background-color: #9FBBC7 !important;
+  }
+  
+  .bg-dark, .bg-dark>a {
+    color: #9C230D !important;
+  }
+  
+  .card.bg-dark, .card.bg-dark .card-body {
+    color: #9C230D !important;
+  }
+  
+  .card.bg-dark .card-header {
+    border-color: #8ba4ae !important;
+  }
+  
+  .bg-opacity-85 {
+    opacity: 0.85;
+  }
+  
+  /* common colors for cards END*/
+  

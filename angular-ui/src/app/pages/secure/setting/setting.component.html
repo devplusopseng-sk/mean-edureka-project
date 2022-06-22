@@ -1,0 +1,246 @@
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <!-- <h1 class="m-0 text-dark">
+              <i class="fas fa-arrow-left cursor-pointer" backButton></i> Register
+            </h1> -->
+                </div>
+                <!-- /.col -->
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /.container-fluid -->
+    </div>
+    <!-- /.content-header -->
+
+    <!-- Main content -->
+    <div class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-3">
+                </div>
+                <!-- /.col-lg-4 -->
+                <div class="col-lg-6">
+                    <div class="card card-primary card-outline card-tabs">
+                        <div class="card-header p-0 pt-1 border-bottom-0">
+                            <ul class="nav nav-tabs" id="custom-tabs-tab" role="tablist">
+
+                                <li class="nav-item w-50 text-center">
+                                    <a class="nav-link active" id="custom-tabs-settings-tab" data-toggle="pill"
+                                        href="#custom-tabs-settings" role="tab" aria-controls="custom-tabs-settings"
+                                        aria-selected="true">Profile
+                                        Settings</a>
+                                </li>
+                                <li class="nav-item w-50 text-center">
+                                    <a class="nav-link" id="custom-tabs-home-tab" data-toggle="pill"
+                                        href="#custom-tabs-home" role="tab" aria-controls="custom-tabs-home"
+                                        aria-selected="false">Change Password</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="card-body">
+                            <div class="tab-content" id="custom-tabs-tabContent">
+
+                                <div class="tab-pane fade active show" id="custom-tabs-settings" role="tabpanel"
+                                    aria-labelledby="custom-tabs-settings-tab">
+                                    <form #updateUserForm="ngForm" (ngSubmit)="updateUserForm.form.valid && updateUserDetails()">
+                                        <div class="card">
+                                            <div class="card-body">
+                                                <div class="form-wrapper">
+                                                    <div class="form-row">
+                                                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                                            <mat-form-field class="w-100" appearance="outline">
+                                                                <mat-label>First Name</mat-label>
+                                                                <input type="text" matInput name="firstName"
+                                                                    autocomplete="off"
+                                                                    [(ngModel)]="updateUser.firstName"
+                                                                    pattern="[A-Za-z]+$" #firstName="ngModel" required>
+                                                                <mat-error>This field is required.</mat-error>
+                                                            </mat-form-field>
+                                                        </div>
+                                                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                                            <mat-form-field class="w-100" appearance="outline">
+                                                                <mat-label>Last Name</mat-label>
+                                                                <input type="text" matInput name="lastName"
+                                                                    autocomplete="off"
+                                                                    [(ngModel)]="updateUser.lastName"
+                                                                    pattern="[A-Za-z]+$" #lastName="ngModel" required>
+                                                                <mat-error>This field is required.</mat-error>
+                                                            </mat-form-field>
+                                                        </div>
+                                                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                                            <mat-form-field class="w-100" appearance="outline">
+                                                                <mat-label>Gender</mat-label>
+                                                                <mat-select matInput name="gender" autocomplete="off"
+                                                                    [(ngModel)]="updateUser.gender" required>
+                                                                    <mat-option value="Male">Male</mat-option>
+                                                                    <mat-option value="Female">Female</mat-option>
+                                                                </mat-select>
+                                                                <mat-error>This field is required.</mat-error>
+                                                            </mat-form-field>
+                                                        </div>
+                                                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                                            <mat-form-field class="w-100" appearance="outline">
+                                                                <mat-label>DOB</mat-label>
+                                                                <input matInput [matDatepicker]="picker"
+                                                                    (click)="picker.open()" matInput name="dob"
+                                                                    autocomplete="off" [(ngModel)]="updateUser.dob"
+                                                                    required>
+                                                                <mat-datepicker-toggle matSuffix [for]="picker">
+                                                                </mat-datepicker-toggle>
+                                                                <mat-datepicker #picker></mat-datepicker>
+                                                                <mat-error>This field is required.</mat-error>
+                                                            </mat-form-field>
+                                                        </div>
+                                                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                                            <mat-form-field class="w-100" appearance="outline">
+                                                                <mat-label>Email</mat-label>
+                                                                <input type="text" matInput name="email"
+                                                                    autocomplete="off" [(ngModel)]="updateUser.email"
+                                                                    pattern="[a-zA-Z0-9.''_%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$"
+                                                                    #email="ngModel" required>
+                                                                <mat-error *ngIf="email?.errors?.['required']">This
+                                                                    field is required.
+                                                                </mat-error>
+                                                                <mat-error *ngIf="email?.errors?.['pattern']">Please
+                                                                    enter the valid
+                                                                    email.</mat-error>
+                                                            </mat-form-field>
+                                                        </div>
+                                                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                                            <mat-form-field class="w-100" appearance="outline">
+                                                                <mat-label>Phone</mat-label>
+                                                                <input type="text" matInput name="phone"
+                                                                    autocomplete="off" [(ngModel)]="updateUser.phone"
+                                                                    pattern="[6-9]\d{9}$"
+                                                                    #phone="ngModel" maxlength="10" required>
+                                                                <mat-error *ngIf="phone?.errors?.['required']">This
+                                                                    field is required.
+                                                                </mat-error>
+                                                                <mat-error *ngIf="phone?.errors?.['pattern']">Please
+                                                                    enter the valid
+                                                                    phone.</mat-error>
+                                                            </mat-form-field>
+                                                        </div>
+                                                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                                            <mat-form-field class="w-100" appearance="outline">
+                                                                <mat-label>Country</mat-label>
+                                                                <input type="text" matInput name="country"
+                                                                    autocomplete="off"
+                                                                    [(ngModel)]="updateUser.country"
+                                                                    pattern="[A-Za-z]+$" #country="ngModel" required>
+                                                                <mat-error>This field is required.</mat-error>
+                                                            </mat-form-field>
+                                                        </div>
+                                                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                                            <mat-form-field class="w-100" appearance="outline">
+                                                                <mat-label>State</mat-label>
+                                                                <input type="text" matInput name="state"
+                                                                    autocomplete="off"
+                                                                    [(ngModel)]="updateUser.state"
+                                                                    pattern="[A-Za-z]+$" #state="ngModel" required>
+                                                                <mat-error>This field is required.</mat-error>
+                                                            </mat-form-field>
+                                                        </div>
+                                                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                                            <mat-form-field class="w-100" appearance="outline">
+                                                                <mat-label>City</mat-label>
+                                                                <input type="text" matInput name="city"
+                                                                    autocomplete="off"
+                                                                    [(ngModel)]="updateUser.city"
+                                                                    pattern="[A-Za-z]+$" #city="ngModel" required>
+                                                                <mat-error>This field is required.</mat-error>
+                                                            </mat-form-field>
+                                                        </div>
+                                                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                                            <mat-form-field class="w-100" appearance="outline">
+                                                                <mat-label>Pincode</mat-label>
+                                                                <input type="text" matInput name="pincode"
+                                                                    autocomplete="off"
+                                                                    [(ngModel)]="updateUser.pincode"
+                                                                    pattern="[0-9]+$" #pincode="ngModel" maxlength="6" required>
+                                                                <mat-error>This field is required.</mat-error>
+                                                            </mat-form-field>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- /.card-body -->
+                                            <div class="card-footer">
+                                                <div class="row">
+                                                    <div class="col-12">
+                                                        <button type="submit"
+                                                            class="btn btn-primary float-right col-lg-2 col-md-2 col-sm-12 col-xs-12 mt-2 mb-2 mt-md-0 mb-md-0"
+                                                            [disabled]="!updateUserForm.valid">Save</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- /.card-footer -->
+                                        </div>
+                                        <!-- /.card -->
+                                    </form>
+                                </div>
+                                <div class="tab-pane fade" id="custom-tabs-home" role="tabpanel"
+                                    aria-labelledby="custom-tabs-home-tab">
+                                    <form #updateUserPwdForm="ngForm" (ngSubmit)="updateUserPwdForm.form.valid && changePassword()">
+                                        <div class="card">
+                                            <div class="card-body">
+                                                <div class="form-wrapper">
+                                                    <div class="form-row">
+                                                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                                            <mat-form-field class="w-100" appearance="outline">
+                                                                <mat-label>New Password</mat-label>
+                                                                <input type="password" matInput name="newPassword"
+                                                                    autocomplete="off"
+                                                                    [(ngModel)]="password.newPassword" #newPassword="ngModel" required>
+                                                                <mat-error>This field is required.</mat-error>
+                                                            </mat-form-field>
+                                                        </div>
+                                                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                                            <mat-form-field class="w-100" appearance="outline">
+                                                                <mat-label>Confirm Password</mat-label>
+                                                                <input type="password" matInput name="confirmPassword"
+                                                                    autocomplete="off"
+                                                                    [(ngModel)]="password.confirmPassword" #confirmPassword="ngModel" required>
+                                                                <mat-error>This field is required.</mat-error>
+                                                            </mat-form-field>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- /.card-body -->
+                                            <div class="card-footer">
+                                                <div class="row">
+                                                    <div class="col-12">
+                                                        <button type="submit"
+                                                            class="btn btn-primary float-right col-lg-2 col-md-2 col-sm-12 col-xs-12 mt-2 mb-2 mt-md-0 mb-md-0"
+                                                            [disabled]="!updateUserPwdForm.valid">Save</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- /.card-footer -->
+                                        </div>
+                                        <!-- /.card -->
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <!-- /.col-lg-4 -->
+                <div class="col-lg-3">
+                </div>
+                <!-- /.col-lg-4 -->
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /.container-fluid -->
+    </div>
+    <!-- /.content -->
+</div>
+<!-- /.content-wrapper -->

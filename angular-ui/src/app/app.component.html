@@ -1,0 +1,10 @@
+<ngx-loading [show]="sharedService.loading" [config]="{ fullScreenBackdrop:true }"></ngx-loading>
+<div class="wrapper">
+
+    <app-header></app-header>
+    <app-error></app-error>
+    <router-outlet></router-outlet>
+    <!-- <app-footer *ngIf="(router.url.indexOf('login')==-1) && (router.url != '/login')"></app-footer> -->
+
+</div>
+<!-- ./wrapper -->

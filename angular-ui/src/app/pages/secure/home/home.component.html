@@ -1,0 +1,114 @@
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <!-- <h1 class="m-0 text-dark">
+              <i class="fas fa-arrow-left cursor-pointer" backButton></i> Register
+            </h1> -->
+                </div>
+                <!-- /.col -->
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /.container-fluid -->
+    </div>
+    <!-- /.content-header -->
+
+    <!-- Main content -->
+    <div class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-1"></div>
+                <div class="col-lg-3">
+
+                    <app-profile-section></app-profile-section>
+
+                </div>
+                <!-- /.col-lg-4 -->
+                <div class="col-lg-7">
+                    <form #postsForm="ngForm"
+                        (ngSubmit)="postsForm.form.valid && submitPost() && postsForm.form.reset()">
+                        <div class="card">
+                            <!-- <div class="card-header">
+                                <h2 class="card-title m-0">Post</h2>
+
+                            </div> -->
+                            <!-- /.card-header -->
+                            <div class="card-body">
+                                <div class="form-wrapper">
+                                    <div class="form-row">
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                            <mat-form-field class="w-100" appearance="outline">
+                                                <textarea matInput placeholder="Write something here..." name="post"
+                                                    [(ngModel)]="post" autocomplete="off" required></textarea>
+                                                <mat-error>This field is required.</mat-error>
+                                            </mat-form-field>
+                                        </div>
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                            <div class="col-lg-8 col-md-8 col-12" *ngIf="imageId === ''">
+                                                <input type="file" id="file" name="file" (change)="uploadImg($event);"
+                                                    accept="image/jpeg, image/jpg, image/png" [(ngModel)]="imageFile">
+                                                <mat-error class="hint-md">Hint: Allowed to upload (jpeg, jpg, png)
+                                                    files
+                                                    only.</mat-error>
+                                                <mat-error class="error-md" *ngIf="imageFileError">{{imageFileError}}
+                                                </mat-error>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- /.card-body -->
+                            <div class="card-footer">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <button type="submit"
+                                            class="btn btn-primary float-right col-lg-2 col-md-2 col-sm-12 col-xs-12 mt-2 mb-2 mt-md-0 mb-md-0"
+                                            [disabled]="!postsForm.valid">Post</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- /.card-footer -->
+                        </div>
+                        <!-- /.card -->
+                    </form>
+                    <div class="card card-widget" *ngFor="let post of posts; let i = index;">
+                        <div class="card-header">
+                            <div class="user-block">
+                                <img class="img-circle" [src]="sharedService.ppMasters[sharedService.authDetails.photoId]" alt="User Image">
+                                <span class="username"><a href="javascript:void(0)">{{post.postDtls.userName}}</a></span>
+                                <!-- <span class="description">Shared publicly - 7:30 PM Today</span> -->
+                            </div>
+
+                        </div>
+
+                        <div class="card-body">
+                            <img *ngIf="post.postDtls.postImageId" class="img-fluid pad" [src]="post.postDtls.postImageId" alt="Photo">
+                            <p>{{post.postDtls.post}}</p>
+                            <!-- <span class="float-right text-muted">127 likes - 3 comments</span> -->
+                        </div>
+
+                        <div class="card-footer">
+                            <div class="row">
+                                <span class="float-right">{{post.postDtls.createdDate}}</span>
+                            </div>
+                        </div>
+                        <!-- /.card-footer -->
+
+                    </div>
+                </div>
+                <!-- /.col-lg-4 -->
+                <div class="col-lg-1">
+                </div>
+                <!-- /.col-lg-4 -->
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /.container-fluid -->
+    </div>
+    <!-- /.content -->
+</div>
+<!-- /.content-wrapper -->

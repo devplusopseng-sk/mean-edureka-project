@@ -1,0 +1,28 @@
+{
+    "mongoDbProperties": {
+        "username": "",
+        "password": "",
+        "database": "edutest",
+        "host": "localhost",
+        "port": "27017",
+        "options": {
+            "maxPoolSize": 10,
+            "minPoolSize": 10,
+            "maxIdleTimeMS": 10000,
+            "waitQueueTimeoutMS": 10000,
+            "connectTimeoutMS":100000,
+            "socketTimeoutMS":100000
+        }
+    },
+    "logProperties": {
+        "filePath": "D:\\logFiles\\EdurekaTest\\",
+        "maxsize": 5000,
+        "level": "debug",
+        "fileName":"%DATE%.app.log",
+        "maxDays":30
+    },
+    "jwt": {
+        "privateKey": "kjdkfjhsdkjfhsdk..sdf",
+        "expireTime": "60min"
+    }
+}

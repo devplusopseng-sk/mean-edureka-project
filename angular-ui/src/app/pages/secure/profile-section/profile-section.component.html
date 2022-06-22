@@ -1,0 +1,31 @@
+<div class="card card-widget widget-user">
+
+    <div class="widget-user-header bg-info">
+        <h3 class="widget-user-username">{{sharedService.authDetails.firstName}} {{sharedService.authDetails.lastName}}</h3>
+        <!-- <h5 class="widget-user-desc">Founder &amp; CEO</h5> -->
+    </div>
+    <div class="widget-user-image cursor-pointer" [routerLink]="['/upload/pp']" tooltip="Change Profile Picture">
+        <img class="img-circle elevation-2" [src]="sharedService.ppMasters[sharedService.authDetails.photoId]" alt="User Avatar">
+    </div>
+    <div class="card-footer">
+        <div class="row">
+            <div class="col-sm-6 border-right">
+                <div class="description-block">
+                    <h5 class="description-header">{{friends}}</h5>
+                    <span class="description-text">Connections</span>
+                </div>
+
+            </div>
+
+            <div class="col-sm-6">
+                <div class="description-block">
+                    <h5 class="description-header">{{posts}}</h5>
+                    <span class="description-text">Posts</span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+</div>

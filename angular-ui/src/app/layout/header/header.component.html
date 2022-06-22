@@ -1,0 +1,53 @@
+<!-- Navbar -->
+<nav class="main-header navbar navbar-expand-md navbar-white navbar-light">
+  <div class="container">
+    <a href="" class="navbar-brand pt-0">
+      <!-- <img src="../../dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
+        style="opacity: .8"> -->
+      <span class="brand-text font-weight-light font-weight-bold">FBOOK</span>
+    </a>
+    <ul class="order-1 order-md-3 navbar-nav navbar-no-expand ml-auto">
+
+      <button class="navbar-toggler order-1 collapsed" type="button" data-toggle="collapse"
+        data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false"
+        aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="navbar-collapse order-3 collapse" id="navbarCollapse">
+
+        <ul class="navbar-nav" *ngIf="!sharedService.authDetails?.isActive">
+          <li class="nav-item" [ngClass]="(router.url.indexOf('/register')!==-1) ? 'active' : ''">
+            <a [routerLink]="['/register']" href="javascript:void(0)" class="nav-link">Register</a>
+          </li>
+          <li class="nav-item" [ngClass]="(router.url.indexOf('/login')!==-1) ? 'active' : ''">
+            <a [routerLink]="['/login']" href="javascript:void(0)" class="nav-link">Login</a>
+          </li>
+        </ul>
+
+        <ul class="navbar-nav" *ngIf="sharedService.authDetails?.isActive">
+          <li class="nav-item" [ngClass]="(router.url.indexOf('/home')!==-1) ? 'active' : ''">
+            <a [routerLink]="['/home']" href="javascript:void(0)" class="nav-link">Home</a>
+          </li>
+          <li class="nav-item" [ngClass]="(router.url.indexOf('/users')!==-1) ? 'active' : ''" *ngIf="sharedService.authDetails.isAdmin">
+            <a [routerLink]="['/users']" href="javascript:void(0)" class="nav-link">Users</a>
+          </li>
+          <li class="nav-item" [ngClass]="(router.url.indexOf('/network')!==-1) ? 'active' : ''">
+            <a [routerLink]="['/network']" href="javascript:void(0)" class="nav-link">Network</a>
+          </li>
+          <li class="nav-item" [ngClass]="(router.url.indexOf('/friends')!==-1) ? 'active' : ''">
+            <a [routerLink]="['/friends']" href="javascript:void(0)" class="nav-link">Friends</a>
+          </li>
+          <li class="nav-item" [ngClass]="(router.url.indexOf('/setting')!==-1) ? 'active' : ''">
+            <a [routerLink]="['/setting']" href="javascript:void(0)" class="nav-link">Setting</a>
+          </li>
+          <li class="nav-item">
+            <a href="javascript:void(0)" class="nav-link" (click)="logout()">Logout</a>
+          </li>
+        </ul>
+      </div>
+
+
+    </ul>
+  </div>
+</nav>
+<!-- /.Navbar -->
